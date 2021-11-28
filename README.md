@@ -1,6 +1,6 @@
 # This is a pomodoro clock for Freecodecamp front end library certification.
 
-DEMO: https://annefiger.github.io/Pomodoro-Clock/
+DEMO: https://annefiger.github.io/pomodoro/
 
 ### It uses React, CSS, Bootstrap and Iconify.
 
