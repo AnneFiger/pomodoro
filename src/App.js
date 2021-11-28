@@ -1,20 +1,19 @@
 import React, { useEffect } from "react";
 import Session from "./Session";
 import Break from "./Break";
-
+import alarmBeep from "./Alarm.wav";
 import "./App.css";
 
-//change to 500ms tests still pass!!!-- drift seems to be a serious pb
-//put newDate so doesn't lag behind
+//change to 500ms tests still pass!!! -> drift seems to be a serious problem
+//put newDate so doesn't lag behind and simulate several sessions in a row.
 
-//simulate several sessions in a row, use as timer -
-
-//see remove useEffect/refactor- remove totaltimeleft break and have use effect for both cases?
+//see change useEffect functions/refactor- remove variable totalTimeLeftBreak 
+//and have use effect for both cases?
 // see handling breaks refactor too.
 
 
 function App(props) {
-  //useState defs for break and session lengths
+  //useState definitions for break and session lengths
   //retrieved from Break and Session components
   const [breakLength, setBreakLength] = React.useState(5);
   const [sessionLength, setSessionLength] = React.useState(25);
@@ -22,7 +21,7 @@ function App(props) {
   const [sessionIsShown, setSessionIsShown] = React.useState(true); //conditional rendering
   const [isRunning, setIsRunning] = React.useState(false); //button logic
   //This only decrement seconds and then calculate with timeDisplay function,
-  //then reinject values in sessioncounter 
+  //then reinject values in sessionCounter 
   const [totalTimeLeft, setTotalTimeLeft] = React.useState(sessionLength);
   let sessionCounter = timeDisplay(totalTimeLeft);
   //same logic than directly above but for breaks.
@@ -145,7 +144,7 @@ function App(props) {
   return (
     <div>
       <div className="App">
-        <div className="Pomodoro containre-fluid">
+        <div className="Pomodoro">
           <h2>Pomodoro Clock</h2>
 
           <div className="my-container">
@@ -178,7 +177,7 @@ function App(props) {
             >
               <span className="iconify" data-icon="ri:restart-fill"></span>
             </button>
-            <audio type="audio" id="beep" src="/Alarm.wav" />
+            <audio id="beep" src= {alarmBeep} />
           </div>
         </div>
       </div>
