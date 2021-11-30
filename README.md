@@ -3,7 +3,7 @@
 https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock
 # Find it online at:
 
-DEMO: https://annefiger.github.io/Pomodoro-Clock/
+DEMO: https://annefiger.github.io/pomodoro/
 
 
 ### This project uses React, CSS, Bootstrap and Iconify.
